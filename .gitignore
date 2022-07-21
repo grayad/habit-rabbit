@@ -105,3 +105,6 @@ dist
 
 #ds_store
 .DS_Store
+
+#environmental variables
+.env

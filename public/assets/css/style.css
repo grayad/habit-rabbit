@@ -1,27 +1,10 @@
-body {
-    font-family: Helvetica, Arial, sans-serif;
-    text-align: center;
-}
-
 main img{
     max-height: 45%;
     max-width: 45%;
 }
 
-.btns {
+
+/* .btns {
     padding-top: 50px;
-}
+} */
 
-.button-primary {
-    font-family: 'Playfair Display', serif;
-    background-color: #d5a6bd;
-    color: #ffffff;
-    font-size: 40px;
-    padding: 15px;
-    font-weight: bold;
-    margin: 10px;
-    text-decoration: none;
-    border: none;
-    border-radius: 10px;
-
-}

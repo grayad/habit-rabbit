@@ -1,9 +1,3 @@
-* {box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
-
-
 body {
     font-family: Helvetica, Arial, sans-serif;
     text-align: center;
@@ -14,11 +8,9 @@ main img{
     max-width: 45%;
 }
 
-
 .btns {
     padding-top: 50px;
 }
-
 
 .button-primary {
     font-family: 'Playfair Display', serif;
@@ -31,27 +23,5 @@ main img{
     text-decoration: none;
     border: none;
     border-radius: 10px;
-}
 
-.button-primary:hover {
-    background-color: #bf95aa;
-}
-
-
-
-
-/* MEDIA QUERIES */
-
-/* MEDIA QUERY FOR SMALLER DESKTOP SCREENS AND SMALLER */
-@media screen and (max-width: 980px) {
-}
-
-
-/* MEDIA QUERY FOR TABLETS AND SMALLER */
-@media screen and (max-width: 768px) {
-}
-
-
-/* MEDIA QUERY FOR MOBILE PHONES AND SMALLER */
-@media screen and (max-width: 575px) {
 }

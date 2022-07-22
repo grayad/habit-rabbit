@@ -3,6 +3,22 @@ main img{
     max-width: 45%;
 }
 
+nav img {
+    max-height: 20%;
+    max-width: 20%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+
+header nav u {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content:space-evenly;
+    align-items: center;
+    list-style: none;
+}
+
 
 /* .btns {
     padding-top: 50px;

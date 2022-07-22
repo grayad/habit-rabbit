@@ -1,29 +1,12 @@
 body {
     font-family: Helvetica, Arial, sans-serif;
     text-align: center;
-    
-}
-
-main {
-    display: block;
 }
 
 main img{
     max-height: 45%;
     max-width: 45%;
 }
-
-
-
-.container {
-    border-style: dashed;
-    border-color: #000000;
-    width: 90%;
-    padding: 90px 0px;
-    
-}
-
-
 
 .btns {
     padding-top: 50px;
@@ -36,13 +19,9 @@ main img{
     font-size: 40px;
     padding: 15px;
     font-weight: bold;
+    margin: 10px;
     text-decoration: none;
     border: none;
     border-radius: 10px;
-    justify-items: left;
-    
-}
 
-.button-primary:hover {
-    background-color: #bf95aa;
 }

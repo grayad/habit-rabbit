@@ -5,7 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Habit Rabbit</title>
-    <link rel="stylesheet" href="./assets/css/style.css" />
+    <link rel="stylesheet" href="./assets/css/normalize.css">
+    <link rel="stylesheet" href="./assets/css/skeleton.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
@@ -17,19 +19,27 @@
 </header>
 
 <body>
-
-    <main>
+    <main class="u-full-width">
         <div class="container">
-            <img src="./assets/images/logo.png">
-            <h1>“Habits are the compound interest of self-improvement”</h1>
-            <h2>― James Clear, Atomic Habits: An Easy and Proven Way to Build Good Habits and Break Bad Ones</h2>
-
-            <div class="btns">
-                <a class="button button-primary" href="./myhabits.html">My Habits</a>
-                <a class="button button-primary" href="./createhabits.html">Create a New Habit</a>
+            <div class="row">
+            <div class="twelve columns">
+                <img src="./assets/images/logo.png">
             </div>
-
-        </div>
+            </div>
+            <div class="row">
+            <div class="twelve columns">
+                <h1>“Habits are the compound interest of self-improvement”</h1>
+                <h2>― James Clear, Atomic Habits: An Easy and Proven Way to Build Good Habits and Break Bad Ones</h2>
+            </div>
+            </div>
+            <div class="btns row">
+                <div class="six columns">
+                    <a class="button-primary" href="./myhabits.html">My Habits</a>
+                </div>
+                <div class="six columns">
+                    <a class="button-primary" href="./createhabits.html">Create a New Habit</a>
+                </div>
+        </div> 
     </main>
 
 </body>

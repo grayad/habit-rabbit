@@ -4,6 +4,11 @@ const router = require('express').Router();
 
 // Homepage
 router.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, '../../public/home.html'))
+});
+
+// Login page
+router.get('/login', (req, res) => {
     res.sendFile(path.join(__dirname, '../../public/index.html'))
 });
 
@@ -19,7 +24,7 @@ router.get('/create-habit', (req, res) => {
 
 // wildcard route for any requests that do not exist
 router.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname, '../../public/index.html'));
+    res.sendFile(path.join(__dirname, '../../public/home.html'));
 });
 
 module.exports=router;

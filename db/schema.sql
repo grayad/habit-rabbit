@@ -1,2 +1,2 @@
-DROP DATABASE IF EXISTS habit_rabbit;
-CREATE DATABASE habit_rabbit;
+DROP DATABASE IF EXISTS habit_rabbit_db;
+CREATE DATABASE habit_rabbit_db;

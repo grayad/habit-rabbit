@@ -1,10 +1,12 @@
 // Import Modules
 const express = require('express');
+const sequelize = require('./config/connection');
 const fs = require('fs');
 const path = require('path');
 
 // Import Routes
-const htmlRoutes = require('./routes/html-routes');
+// const htmlRoutes = require('./routes/html-routes');
+const routes = require('./routes');
 
 // use PORT if it has been set, or default to 3001
 const PORT = process.env.PORT || 3001;
@@ -19,9 +21,10 @@ app.use(express.json());
 // make asset files readily available, aka static resources
 app.use(express.static('./public'));
 // Use Routes
-app.use('/', htmlRoutes);
+// app.use('/', htmlRoutes);
+app.use(routes);
 
-// listener
-app.listen(PORT, () => {
-    console.log(`API server now on port ${PORT}!`);
+// turn on connection to db and server
+sequelize.sync({ force: false }).then(() => {
+    app.listen(PORT, () => console.log('Now listening'));
 });

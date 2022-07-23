@@ -4,23 +4,28 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Habit Rabbit</title>
+    <title>Create a New Habit</title>
     <link rel="stylesheet" href="../public/assets/css/normalize.css">
     <link rel="stylesheet" href="../public/assets/css/skeleton.css">
     <link rel="stylesheet" href="../public/assets/css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
-
 </head>
 
 <header>
+    <img src="./assets/images/logo.png">
     <nav>
-        <img src="./assets/images/logo.png">
         <u>
-            <li><a href="./home.html">Main Menu</a></li>
-            <li><a href="./myhabits.html">My Habits</a></li>
-            <li><a href="./index.html">Log Out?</a></li>
+            <li>
+                <a href="./home.html">Main Menu</a>
+            </li>
+            <li>
+                <a href="./myhabits.html">My Habits</a>
+            </li>
+            <li>
+                <a href="./index.html">Log Out?</a>
+            </li>
         </u>
     </nav>
 </header>
@@ -28,20 +33,41 @@
 <body>
     <main class="u-full-width">
         <div class="container">
-            <div class="row">
-            <div class="twelve columns">
-                CREATE HABITS
+            <h1>Create a New Habit</h1>
+            <h2>Please fill in your habit details below.</h2>
+            <div class="user-input twelve column">
+
+                <div class="test">
+                    <label for="habitName">Habit Name:</label>
+                    <input class="" type="text" placeholder="" id="habitName">
+                </div>
+                popup when user doesnt enter text?
+
+
+                <div class="test">
+                    <label for="habitType">Habit Type:</label>
+                    <input class="" type="text" placeholder="" id="habitType">
+                </div>
+                popup when user doesnt enter text?
+
+
+                <div class="test">
+                    <label for="targetDays">Target Number of Days:</label>
+                    <input class="" type="text" placeholder="" id="targetDays">
+                </div>
+
+                popup when user doesnt enter number?
+
 
             </div>
+            <div class="btns-row twelve column">
+                <input class="button-primary" type="submit" value="Create Habit" id="createHabit">
+                <a class="button button-primary" href="./myhabits.html">View Habits</a>
+                    <br>pop-up that says 'habit created'?
             </div>
-            <div class="row">
-            <div class="twelve columns">
 
-            </div>
-            </div>
-
+        </div>
     </main>
-
 </body>
 
 <footer>

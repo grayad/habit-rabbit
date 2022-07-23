@@ -1,27 +1,30 @@
-body {
-    font-family: Helvetica, Arial, sans-serif;
-    text-align: center;
-}
-
 main img{
     max-height: 45%;
     max-width: 45%;
 }
 
-.btns {
+nav img {
+    max-height: 20%;
+    max-width: 20%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+
+header nav u {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content:space-evenly;
+    align-items: center;
+    list-style: none;
+}
+
+
+/* .btns {
     padding-top: 50px;
-}
+} */
 
-.button-primary {
-    font-family: 'Playfair Display', serif;
-    background-color: #d5a6bd;
-    color: #ffffff;
-    font-size: 40px;
-    padding: 15px;
-    font-weight: bold;
-    margin: 10px;
-    text-decoration: none;
-    border: none;
-    border-radius: 10px;
-
+<<<<<<< HEAD
+=======
 }
+>>>>>>> ff6f48e3d840433dc84f6951d745f7dce3f4e580

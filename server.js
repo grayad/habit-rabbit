@@ -1,7 +1,10 @@
-// import modules
+// Import Modules
 const express = require('express');
 const fs = require('fs');
 const path = require('path');
+
+// Import Routes
+const htmlRoutes = require('./routes/html-routes');
 
 // use PORT if it has been set, or default to 3001
 const PORT = process.env.PORT || 3001;
@@ -15,21 +18,8 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 // make asset files readily available, aka static resources
 app.use(express.static('./public'));
-
-// html routes
-app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, './public/index.html'))
-});
-app.get('/myhabits', (req, res) => {
-    res.sendFile(path.join(__dirname, './public/myhabits.html'))
-});
-app.get('/create-habit', (req, res) => {
-    res.sendFile(path.join(__dirname, './public/createhabits.html'))
-});
-// wildcard route for any requests that do not exist
-app.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname, './public/index.html'));
-});
+// Use Routes
+app.use('/', htmlRoutes);
 
 // listener
 app.listen(PORT, () => {

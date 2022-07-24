@@ -44,14 +44,14 @@ Counts.init(
     }
   },
   {
-    hooks: {
+    // hooks: {
 
-    },
+    // },
     sequelize,
     timestamps: true,
     freezeTableName: true,
     underscored: true,
-    modelName: 'habit'
+    modelName: 'Counts'
   }
 );
 

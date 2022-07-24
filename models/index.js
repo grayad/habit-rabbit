@@ -1,5 +1,5 @@
 const User = require('./User');
-const User = require('./Habit');
-const User = require('./Counts.js');
+const Habit = require('./Habit');
+const Counts = require('./Counts.js');
 
 module.exports = { User, Habit, Counts };

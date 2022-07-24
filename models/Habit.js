@@ -39,9 +39,9 @@ Habit.init(
     }
   },
   {
-    hooks: {
+    // hooks: {
 
-    },
+    // },
     sequelize,
     timestamps: true,
     freezeTableName: true,

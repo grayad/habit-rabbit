@@ -11,6 +11,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
+
 </head>
 
 <header>
@@ -35,36 +36,34 @@
         <div class="container">
             <h1>Create a New Habit</h1>
             <h2>Please fill in your habit details below.</h2>
-            <div class="user-input twelve column">
+            <div class="user-input twelve columns">
 
-                <div class="test">
+                <div class="align">
                     <label for="habitName">Habit Name:</label>
                     <input class="" type="text" placeholder="" id="habitName">
                 </div>
-                popup when user doesnt enter text?
 
 
-                <div class="test">
+                <div class="align">
                     <label for="habitType">Habit Type:</label>
                     <input class="" type="text" placeholder="" id="habitType">
                 </div>
-                popup when user doesnt enter text?
 
 
-                <div class="test">
+                <div class="align">
                     <label for="targetDays">Target Number of Days:</label>
                     <input class="" type="text" placeholder="" id="targetDays">
                 </div>
 
-                popup when user doesnt enter number?
 
 
             </div>
-            <div class="btns-row twelve column">
-                <input class="button-primary" type="submit" value="Create Habit" id="createHabit">
+            <div class="btns-row twelve columns">
+                <button type="submit" class="button-primary" id="createHabit">Create Habit</button>
                 <a class="button button-primary" href="./myhabits.html">View Habits</a>
-                    <br>pop-up that says 'habit created'?
             </div>
+            pop-up that says 'habit created'? or invalid alert if user doesnt enter text/number in respective fields?
+
 
         </div>
     </main>

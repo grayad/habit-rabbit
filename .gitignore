@@ -107,4 +107,6 @@ dist
 .DS_Store
 
 #environmental variables
-.env
+
+# IDE - VSCode
+.vscode/*

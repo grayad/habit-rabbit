@@ -64,7 +64,6 @@ h2 .plus {
 .plus {
     color:#d5a6bd;
     font-size: 35px;
-
 }
 
 .card button span:hover {
@@ -73,6 +72,13 @@ h2 .plus {
 
 .card {
     width: 300px;
+    flex-wrap: wrap;
+    display: flex;
+    display:inline-flex;
+}
+
+.card button {
+    align-content: center;
 }
 
 

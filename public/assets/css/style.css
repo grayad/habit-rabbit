@@ -41,7 +41,6 @@ header img {
 .test {
     display: flex;
     justify-content: space-evenly;
-    /* align-items: center; */
 }
 
 h2 .plus {
@@ -49,7 +48,7 @@ h2 .plus {
 }
 
 .plus {
-    color:#d5a6bd;
+    color: #d5a6bd;
     font-size: 35px;
 }
 

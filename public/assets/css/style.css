@@ -38,7 +38,7 @@ header img {
 
 }
 
-.test {
+.align {
     display: flex;
     justify-content: space-evenly;
 }

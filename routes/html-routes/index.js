@@ -22,7 +22,7 @@ router.get('/create-habit', (req, res) => {
     res.sendFile(path.join(__dirname, '../../public/createhabits.html'))
 });
 
-// wildcard route for any requests that do not exist
+// Wildcard route for any requests that do not exist
 router.get('*', (req, res) => {
     res.sendFile(path.join(__dirname, '../../public/home.html'));
 });

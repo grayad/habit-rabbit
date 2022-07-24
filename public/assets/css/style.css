@@ -30,6 +30,13 @@ header img {
     font-weight: normal;
 }
 
+.btns-row
+{
+    padding-top: 50px;
+    justify-content: space-evenly;
+    display: flex;
+
+}
 
 .test {
     display: flex;
@@ -51,10 +58,13 @@ h2 .plus {
 }
 
 .card {
-    width: 300px;
-    flex-wrap: wrap;
+    align-items: center;
+    width: 350px;
+}
+
+.cards {
     display: flex;
-    display:inline-flex;
+    justify-content: space-between;
 }
 
 .card button {
@@ -65,5 +75,6 @@ h2 .plus {
 .card-container{
     background-color: #eeeeee;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    padding: 40px 0px;
 
 }

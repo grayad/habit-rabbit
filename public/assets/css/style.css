@@ -1,50 +1,59 @@
+header {
+    display: flex;
+}
+
+
+header img {
+    max-height: 25%;
+    max-width: 25%;
+    padding-right: 50px;
+}
+
+
+nav u {
+display: flex;
+justify-content: space-evenly;
+list-style: none;
+font-size: 30px;
+padding-bottom: 60px;
+}
+
+
 img{
     max-height: 45%;
     max-width: 45%;
 }
 
-body {}
-
-
-header {
-    display: flex;
-    flex-wrap: wrap;
-    list-style: none;
-    text-decoration: none;
-    font-size: 20px;
-}
-
-/* nav,
-header nav u  */
-
 .row {
     text-align: center;
 }
 
-.u-full-width {
-    text-align:center;
+.addbutton-row {
+    padding-top: 40px;
 }
 
+.u-full-width {
+    text-align: center;
+}
+
+
 .quote {
-    padding: 50px 0px;
+    padding: 20px 0px 40px 0px;
     width: 70%;
     margin-left: auto;
     margin-right: auto;
 }
 
+
 .quote h1 {
     font-size: 40px;
 }
+
 
 .quote h2 {
     font-size: 25px;
 }
 
-
-header img {
-    max-height: 20%;
-    max-width: 20%;
-}
 
 .user-input {
     padding: 20px 50px;
@@ -52,16 +61,23 @@ header img {
     border-radius: 4px;
 }
 
+
 .user-input label {
     font-size: 30px;
     font-weight: normal;
 }
+
 
 .btns-row {
     padding-top: 50px;
     justify-content: space-evenly;
     display: flex;
 }
+
+.addbutton {
+    background-color: white;
+}
+
 
 .button {
     font-size: 30px;
@@ -95,6 +111,7 @@ h2 .plus {
     font-size: 60px;
 }
 
+
 .plus {
     color: #d5a6bd;
     font-size: 35px;
@@ -106,7 +123,6 @@ h2 .plus {
 
 .card {
     align-items: center;
-    width: 350px;
 }
 
 .cards {

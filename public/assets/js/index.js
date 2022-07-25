@@ -1,6 +1,9 @@
 // thoughts:
-// query to get all habits and counts (array of objects)
-// then forEach object in the array, run the generateCard function OR use JS to create 
+// when create (POST) a new habit (on form submit),
+// package inputs as object and create html by accessing each property (or add to array idea below)
+
+// query to get all current habits and counts (array of objects)?
+// then forEach object in the array, run the generateCard function OR use JS to create
 // each element with the appropriate classes
 
 const getHabits = () =>

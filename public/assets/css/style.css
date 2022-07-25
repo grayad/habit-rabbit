@@ -1,18 +1,45 @@
-main img{
+img{
     max-height: 45%;
     max-width: 45%;
 }
 
-nav,
-header,
-header nav u  {
+body {}
+
+
+header {
     display: flex;
     flex-wrap: wrap;
-    align-items: center;
     list-style: none;
     text-decoration: none;
     font-size: 20px;
 }
+
+/* nav,
+header nav u  */
+
+.row {
+    text-align: center;
+}
+
+.u-full-width {
+    text-align:center;
+}
+
+.quote {
+    padding: 50px 0px;
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.quote h1 {
+    font-size: 40px;
+}
+
+.quote h2 {
+    font-size: 25px;
+}
+
 
 header img {
     max-height: 20%;
@@ -20,7 +47,7 @@ header img {
 }
 
 .user-input {
-    padding: 20px 0px;
+    padding: 20px 50px;
     background-color: #eeeeee;
     border-radius: 4px;
 }
@@ -30,17 +57,38 @@ header img {
     font-weight: normal;
 }
 
-.btns-row
-{
+.btns-row {
     padding-top: 50px;
     justify-content: space-evenly;
     display: flex;
+}
 
+.button {
+    font-size: 30px;
+    background-color:#d5a6bd;
+}
+
+.button.button-primary,
+button {
+    background-color: #d5a6bd;
+    border-color: #d5a6bd;
+}
+
+.button.button-primary:hover,
+.button.button-primary:focus {
+    background-color: #aa8497;
+    border-color: #aa8497;
+}
+
+input {
+    width: 400px;
 }
 
 .align {
     display: flex;
-    justify-content: space-evenly;
+    padding: 20px;
+    justify-content: space-between;
+    padding: 10px 20px;
 }
 
 h2 .plus {

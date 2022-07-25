@@ -17,13 +17,13 @@ Counts.init(
         references: {
             model: 'habit',
             key: 'id'
-        }  
+        } 
     },
     user_id: {
         type: DataTypes.INTEGER,
         references: {
-          model: 'habit',
-          key: 'user_id'
+          model: 'user',
+          key: 'id'
         }
     },
     total_confirms: {

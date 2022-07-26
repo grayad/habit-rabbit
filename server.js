@@ -3,6 +3,7 @@ const express = require('express');
 const sequelize = require('./config/connection');
 const fs = require('fs');
 const path = require('path');
+const exphbs = require('express-handlebars');
 
 // Import Routes
 // const htmlRoutes = require('./routes/html-routes');
@@ -13,6 +14,10 @@ const PORT = process.env.PORT || 3001;
 
 // instantiate the server
 const app = express();
+// instantiate express handlebars to use for templating
+const hbs = exphbs.create();
+// pass handlebars engine into express app
+app.engine('handlebars', hbs.engine);
 
 // parse incoming string or array data
 app.use(express.urlencoded({ extended: true }));

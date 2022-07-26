@@ -4,7 +4,10 @@ var habitInputEl = document.getElementById('habitName');
 var typeInputEl = document.getElementById('habitType');
 var daysInputEl = document.getElementById('targetDays');
 var formBtnEl = document.getElementById('createHabit');
-var cardsEl = document.getElementById('card-section');
+}
+
+if (window.location.pathname === '/my-habits') {
+    var cardsEl = document.getElementById('card-section');
 }
 
 const getHabits = () =>

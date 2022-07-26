@@ -6,6 +6,13 @@ var daysInputEl = document.getElementById('targetDays');
 var formBtnEl = document.getElementById('createHabit');
 }
 
+const getHabits = () =>
+    fetch('/api/habits', {
+        method: 'GET',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+    });
 const addHabit = (habit) =>
     fetch('/api/habits', {
         method: 'POST',

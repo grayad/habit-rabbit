@@ -1,7 +1,28 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-class Counts extends Model {};
+class Counts extends Model {
+  static upCount(body, models) {
+    return models.Counts.create({
+        id: body.id
+      }).then(() => {
+        return Counts.findOne({
+          where: {
+            id: body.habit_id
+          },
+          attributes: [
+            'total_confirms'
+          ]
+      }).then(dbPostData => {
+      if (!dbPostData) {
+        res.status(404).json({ message: 'No Count found with this id' });
+        return;
+      }
+      return dbPostData.total_confirms + 1;;
+  });
+      });
+    };
+};
 
 Counts.init(
   {
@@ -13,11 +34,11 @@ Counts.init(
     },
     habit_id: {
         type: DataTypes.INTEGER,
-        allowNull: false,
+        allowNull: true,
         references: {
             model: 'habit',
             key: 'id'
-        } 
+        }
     },
     user_id: {
         type: DataTypes.INTEGER,
@@ -31,7 +52,7 @@ Counts.init(
     },
     prev_confirm_date: {
         type: DataTypes.DATE,
-        allowNull: false
+        allowNull: true
         //This is date/time now, but should only update when habit confirmed.
     },
     prev_streak: {

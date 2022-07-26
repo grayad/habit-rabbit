@@ -6,14 +6,14 @@ var daysInputEl = document.getElementById('targetDays');
 var formBtnEl = document.getElementById('createHabit');
 
 
-// const addHabit = (habit) =>
-//     fetch('/api/habits', {
-//         method: 'POST',
-//         headers: {
-//         'Content-Type': 'application/json',
-//         },
-//         body: JSON.stringify(habit),
-//     });
+const addHabit = (habit) =>
+    fetch('/api/habits', {
+        method: 'POST',
+        headers: {
+        'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(habit),
+    });
 
 var formSubmitHandler = function() {
     console.log(">>>button clicked");
@@ -23,8 +23,10 @@ var formSubmitHandler = function() {
     var habitType=typeInputEl.value.trim();
     var habitDays=daysInputEl.value.trim();
 
+    let newHabit;
+
     if(habitName, habitType, habitDays) {
-        const newHabit = {
+        newHabit = {
             name: habitName,
             type: habitType,
             targetDays: habitDays
@@ -35,9 +37,18 @@ var formSubmitHandler = function() {
         alert("Please complete all fields.")
     }
 
-    // addHabit(newHabit).then(() => {
-
-    // })
+    addHabit(newHabit).then(() => {
+        getAndRenderHabits();
+    });
 }
+
+const renderHabits = async (habits) => {
+    letjsonHabits = await habits.json();
+
+
+}
+
+// Gets habits from the db and renders them to the page
+const getAndRenderHabits = () => getHabits().then(renderHabits);
 
 formBtnEl.addEventListener("click", formSubmitHandler);

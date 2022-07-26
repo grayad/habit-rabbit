@@ -1,10 +1,10 @@
 
-
+if (window.location.pathname === '/create-habit') {
 var habitInputEl = document.getElementById('habitName');
 var typeInputEl = document.getElementById('habitType');
 var daysInputEl = document.getElementById('targetDays');
 var formBtnEl = document.getElementById('createHabit');
-
+}
 
 const addHabit = (habit) =>
     fetch('/api/habits', {
@@ -29,7 +29,7 @@ var formSubmitHandler = function() {
         newHabit = {
             name: habitName,
             type: habitType,
-            targetDays: habitDays
+            target_days: habitDays
         };
         console.log(newHabit);
     } else {
@@ -43,7 +43,8 @@ var formSubmitHandler = function() {
 }
 
 const renderHabits = async (habits) => {
-    letjsonHabits = await habits.json();
+    let jsonHabits = await habits.json();
+    console.log(jsonHabits)
 
 
 }

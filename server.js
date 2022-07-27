@@ -12,9 +12,8 @@ const sess = {
   cookie: {},
   resave: false,
   saveUnInitialized: true,
-  store: new SequelizeStore({db: sequelize})
-}
-app.use(session(sess));
+  store: new SequelizeStore({ db: sequelize }),
+};
 
 // Import Routes
 // const htmlRoutes = require('./routes/html-routes');
@@ -25,6 +24,7 @@ const PORT = process.env.PORT || 3001;
 
 // instantiate the server
 const app = express();
+app.use(session(sess));
 // instantiate express handlebars to use for templating
 const hbs = exphbs.create();
 // pass handlebars engine into express app

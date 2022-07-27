@@ -3,15 +3,15 @@ const router = require("express").Router();
 const sequelize = require("../../config/connection");
 const { Habit, Counts, User } = require("../../models");
 
-// Homepage
-router.get("/", (req, res) => {
-  res.render("home");
-});
-
 // Login page
-router.get("/login", (req, res) => {
+router.get("/", (req, res) => {
   // user handlebar method to render html
   res.render("login");
+});
+
+// Homepage
+router.get("/home", (req, res) => {
+  res.render("home");
 });
 
 // My Habits page

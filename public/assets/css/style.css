@@ -10,12 +10,44 @@ header img {
 }
 
 
+.header-div {
+    display: flex;
+    align-content: center;
+    flex-wrap: wrap;
+    font-family: 'Playfair Display';
+}
+
+
+.header-div h1 {
+    font-size: 78px;
+}
+
+
 nav u {
-display: flex;
-justify-content: space-evenly;
-list-style: none;
-font-size: 30px;
-padding-bottom: 60px;
+    display: flex;
+    justify-content: space-evenly;
+    list-style: none;
+    font-size: 30px;
+    padding-bottom: 60px;
+}
+
+a {
+    color:#d5a6bd;
+}
+
+a:hover {
+    color:#aa8497;
+}
+
+nav u li a {
+    text-decoration: none;
+}
+
+.login-row {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: center;
 }
 
 
@@ -39,7 +71,7 @@ img{
 
 .quote {
     padding: 20px 0px 40px 0px;
-    width: 70%;
+    width: 60%;
     margin-left: auto;
     margin-right: auto;
 }
@@ -79,26 +111,29 @@ img{
 }
 
 
-.button {
-    font-size: 30px;
-    background-color:#d5a6bd;
-}
+
 
 .button.button-primary,
-button {
+input[type="submit"] {
+    font-size: 30px;
     background-color: #d5a6bd;
     border-color: #d5a6bd;
+    color: #ffffff;
 }
 
 .button.button-primary:hover,
-.button.button-primary:focus {
+.button.button-primary:focus,
+input[type=submit]:hover {
     background-color: #aa8497;
     border-color: #aa8497;
+    color: #ffffff;
+
 }
 
 input {
     width: 400px;
 }
+
 
 .align {
     display: flex;

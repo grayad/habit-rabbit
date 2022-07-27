@@ -10,13 +10,13 @@ if (window.location.pathname === '/my-habits') {
     var cardsEl = document.getElementById('card-section');
 }
 
-const getHabits = () =>
-    fetch('/api/habits', {
-        method: 'GET',
-        headers: {
-            'Content-Type': 'application/json',
-        },
-    });
+// const getHabits = () =>
+//     fetch('/api/habits', {
+//         method: 'GET',
+//         headers: {
+//             'Content-Type': 'application/json',
+//         },
+//     });
 // const addHabit = (habit) =>
 //     fetch('/api/habits', {
 //         method: 'POST',
@@ -51,25 +51,25 @@ const getHabits = () =>
 //     });
 // }
 
-const renderHabits = async (habits) => {
-    let jsonHabits = await habits.json();
-    console.log(jsonHabits);
+// const renderHabits = async (habits) => {
+//     let jsonHabits = await habits.json();
+//     console.log(jsonHabits);
 
-    for(i=0; i<jsonHabits.length; i++) {
-        // create html elements
-        var habitCard = document.createElement('div');
-        habitCard.className= 'card';
-        var cardContainer = document.createElement('div');
-        cardContainer.className = 'card-container';
-        var cardTitle = document.createElement('h4');
-        cardTitle.innerText = jsonHabits[i].name;
+//     for(i=0; i<jsonHabits.length; i++) {
+//         // create html elements
+//         var habitCard = document.createElement('div');
+//         habitCard.className= 'card';
+//         var cardContainer = document.createElement('div');
+//         cardContainer.className = 'card-container';
+//         var cardTitle = document.createElement('h4');
+//         cardTitle.innerText = jsonHabits[i].name;
 
-        // append to page
-        cardContainer.append(cardTitle);
-        habitCard.append(cardContainer);
-        cardsEl.append(habitCard);
-    }
-}
+//         // append to page
+//         cardContainer.append(cardTitle);
+//         habitCard.append(cardContainer);
+//         cardsEl.append(habitCard);
+//     }
+// }
 
 // Gets habits from the db and renders them to the page
 const getAndRenderHabits = () => getHabits().then(renderHabits);

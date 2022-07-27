@@ -42,7 +42,11 @@ router.get("/my-habits", (req, res) => {
       },
     ],
   })
-    .then((dbPostData) => res.render("myhabits", { dbPostData }))
+    .then((dbHabits) => {
+      const habits = dbHabits.map((h) => h.dataValues);
+      console.log(habits);
+      res.render("myhabits", { habits });
+    })
     .catch((err) => {
       console.log(err);
       res.status(500).json(err);

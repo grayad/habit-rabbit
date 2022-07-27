@@ -5,13 +5,32 @@ if (window.location.pathname === "/") {
   var createAcctBtn = document.getElementById("createAccount");
 }
 
-var loginHandler = function () {
-  console.log(">>>login button clicked");
+var loginHandler = async function (event) {
+  event.preventDefault();
+
+  // get values from inputs and trim any leading/trailing spaces
+  var userEmail = emailInputEl.value.trim();
+  var userPW = passwordInputEl.value.trim();
+
+  const response = await fetch("/api/users/login", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      email: userEmail,
+      password: userPW,
+    }),
+  });
+
+  if (response.ok) {
+    document.location.replace("/home");
+  } else {
+    alert("Failed to login");
+  }
 };
 
 var createAcctHandler = async function (event) {
-  console.log(">>>create account button clicked");
-
   event.preventDefault();
 
   // get values from inputs and trim any leading/trailing spaces

@@ -1,79 +1,59 @@
-
-if (window.location.pathname === '/create-habit') {
-var habitInputEl = document.getElementById('habitName');
-var typeInputEl = document.getElementById('habitType');
-var daysInputEl = document.getElementById('targetDays');
-var formBtnEl = document.getElementById('createHabit');
+if (window.location.pathname === "/create-habit") {
+  var habitInputEl = document.getElementById("habitName");
+  var typeInputEl = document.getElementById("habitType");
+  var daysInputEl = document.getElementById("targetDays");
+  var formBtnEl = document.getElementById("createHabit");
 }
 
-if (window.location.pathname === '/my-habits') {
-    var cardsEl = document.getElementById('card-section');
+if (window.location.pathname === "/login") {
+  var emailInputEl = document.getElementById("emailInput");
+  var passwordInputEl = document.getElementById("passwordInput");
+  var loginBtnEl = document.getElementById("logIn");
+  var createAcctBtn = document.getElementById("createAccount");
 }
 
-const getHabits = () =>
-    fetch('/api/habits', {
-        method: 'GET',
-        headers: {
-            'Content-Type': 'application/json',
-        },
-    });
-// const addHabit = (habit) =>
-//     fetch('/api/habits', {
-//         method: 'POST',
-//         headers: {
-//         'Content-Type': 'application/json',
-//         },
-//         body: JSON.stringify(habit),
-//     });
+var loginHandler = function () {
+  console.log(">>>login button clicked");
+};
 
-// var formSubmitHandler = function() {
-//     // get values from inputs and trim any leading/trailing spaces
-//     var habitName=habitInputEl.value.trim();
-//     var habitType=typeInputEl.value.trim();
-//     var habitDays=daysInputEl.value.trim();
+var createAcctHandler = function () {
+  console.log(">>>create account button clicked");
+};
 
-//     let newHabit;
+// function to post new habit to db on form submit
+const addHabit = (habit) =>
+  fetch("/api/habits", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(habit),
+  });
 
-//     if(habitName, habitType, habitDays) {
-//         newHabit = {
-//             name: habitName,
-//             type: habitType,
-//             target_days: habitDays
-//         };
-//         console.log(newHabit);
-//     } else {
-//         // if any inputs left blank
-//         alert("Please complete all fields.")
-//     }
+var formSubmitHandler = function () {
+  // get values from inputs and trim any leading/trailing spaces
+  var habitName = habitInputEl.value.trim();
+  var habitType = typeInputEl.value.trim();
+  var habitDays = daysInputEl.value.trim();
 
-//     addHabit(newHabit).then(() => {
-//         getAndRenderHabits();
-//     });
-// }
+  let newHabit;
 
-const renderHabits = async (habits) => {
-    let jsonHabits = await habits.json();
-    console.log(jsonHabits);
+  if ((habitName, habitType, habitDays)) {
+    newHabit = {
+      name: habitName,
+      type: habitType,
+      target_days: habitDays,
+    };
+    console.log(newHabit);
+  } else {
+    // if any inputs left blank
+    alert("Please complete all fields.");
+  }
 
-    for(i=0; i<jsonHabits.length; i++) {
-        // create html elements
-        var habitCard = document.createElement('div');
-        habitCard.className= 'card';
-        var cardContainer = document.createElement('div');
-        cardContainer.className = 'card-container';
-        var cardTitle = document.createElement('h4');
-        cardTitle.innerText = jsonHabits[i].name;
+  addHabit(newHabit).then(() => {
+    alert("Habit added! Click View Habits to see all of your habits.");
+  });
+};
 
-        // append to page
-        cardContainer.append(cardTitle);
-        habitCard.append(cardContainer);
-        cardsEl.append(habitCard);
-    }
-}
-
-// Gets habits from the db and renders them to the page
-const getAndRenderHabits = () => getHabits().then(renderHabits);
-
-getAndRenderHabits();
-
-// formBtnEl.addEventListener("click", formSubmitHandler);
+formBtnEl.addEventListener("click", formSubmitHandler);
+createAcctBtn.addEventListener("click", createAcctHandler);

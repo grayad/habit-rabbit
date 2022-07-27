@@ -102,7 +102,6 @@ dist
 
 # TernJS port file
 .tern-port
-<<<<<<< HEAD
 
 #ds_store
 .DS_Store
@@ -110,6 +109,3 @@ dist
 #environmental variables
 
 # IDE - VSCode
-.vscode/*
-=======
->>>>>>> 9e9ff165620f2e6df44dc2c4eeb716fe7cb77fa6

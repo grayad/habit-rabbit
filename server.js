@@ -4,6 +4,16 @@ const sequelize = require("./config/connection");
 const fs = require("fs");
 const path = require("path");
 const exphbs = require("express-handlebars");
+const session = require("express-session");
+const SequelizeStore = require("connect-session-sequelize")(session.Store);
+
+const sess = {
+  secret: process.env.secret,
+  cookie: {},
+  resave: false,
+  saveUnInitialized: true,
+  store: new SequelizeStore({ db: sequelize }),
+};
 
 // Import Routes
 // const htmlRoutes = require('./routes/html-routes');
@@ -14,6 +24,7 @@ const PORT = process.env.PORT || 3001;
 
 // instantiate the server
 const app = express();
+app.use(session(sess));
 // instantiate express handlebars to use for templating
 const hbs = exphbs.create();
 // pass handlebars engine into express app

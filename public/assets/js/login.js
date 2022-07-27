@@ -40,7 +40,7 @@ var createAcctHandler = function () {
   }
 
   addUser(newUser).then(() => {
-    alert("Account created!.");
+    document.location.replace("/home");
   });
 };
 

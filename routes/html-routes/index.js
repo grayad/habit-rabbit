@@ -44,7 +44,6 @@ router.get("/my-habits", (req, res) => {
   })
     .then((dbHabits) => {
       const habits = dbHabits.map((h) => h.dataValues);
-      console.log(habits);
       res.render("myhabits", { habits });
     })
     .catch((err) => {

@@ -16,6 +16,7 @@ const addHabit = (habit) =>
   });
 
 var formSubmitHandler = function () {
+  console.log(">>>button clicked");
   // get values from inputs and trim any leading/trailing spaces
   var habitName = habitInputEl.value.trim();
   var habitType = typeInputEl.value.trim();
@@ -40,22 +41,4 @@ var formSubmitHandler = function () {
   });
 };
 
-formBtnEl.addEventListener("submit", formSubmitHandler);
-
-if (window.location.pathname === "/login") {
-  var emailInputEl = document.getElementById("emailInput");
-  var passwordInputEl = document.getElementById("passwordInput");
-  var loginBtnEl = document.getElementById("logIn");
-  var createAcctBtn = document.getElementById("createAccount");
-
-  createAcctBtn.addEventListener("submit", createAcctHandler);
-  loginBtnEl.addEventListener("submit", loginHandler);
-}
-
-var loginHandler = function () {
-  console.log(">>>login button clicked");
-};
-
-var createAcctHandler = function () {
-  console.log(">>>create account button clicked");
-};
+formBtnEl.addEventListener("click", formSubmitHandler);

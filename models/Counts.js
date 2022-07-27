@@ -1,28 +1,7 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-class Counts extends Model {
-  static upCount(body, models) {
-    return models.Counts.create({
-        id: body.id
-      }).then(() => {
-        return Counts.findOne({
-          where: {
-            id: body.habit_id
-          },
-          attributes: [
-            'total_confirms'
-          ]
-      }).then(dbPostData => {
-      if (!dbPostData) {
-        res.status(404).json({ message: 'No Count found with this id' });
-        return;
-      }
-      return dbPostData.total_confirms + 1;;
-  });
-      });
-    };
-};
+class Counts extends Model {};
 
 Counts.init(
   {

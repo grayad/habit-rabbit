@@ -5,10 +5,22 @@ if (window.location.pathname === "/create-habit") {
   var formBtnEl = document.getElementById("createHabit");
 }
 
-if (window.location.pathname === "/my-habits") {
-  var cardsEl = document.getElementById("card-section");
+if (window.location.pathname === "/login") {
+  var emailInputEl = document.getElementById("emailInput");
+  var passwordInputEl = document.getElementById("passwordInput");
+  var loginBtnEl = document.getElementById("logIn");
+  var createAcctBtn = document.getElementById("createAccount");
 }
 
+var loginHandler = function () {
+  console.log(">>>login button clicked");
+};
+
+var createAcctHandler = function () {
+  console.log(">>>create account button clicked");
+};
+
+// function to post new habit to db on form submit
 const addHabit = (habit) =>
   fetch("/api/habits", {
     method: "POST",
@@ -44,3 +56,4 @@ var formSubmitHandler = function () {
 };
 
 formBtnEl.addEventListener("click", formSubmitHandler);
+createAcctBtn.addEventListener("click", createAcctHandler);

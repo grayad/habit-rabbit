@@ -16,7 +16,6 @@ const addHabit = (habit) =>
   });
 
 var formSubmitHandler = function () {
-  console.log(">>>button clicked");
   // get values from inputs and trim any leading/trailing spaces
   var habitName = habitInputEl.value.trim();
   var habitType = typeInputEl.value.trim();

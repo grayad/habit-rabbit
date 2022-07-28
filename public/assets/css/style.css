@@ -2,26 +2,49 @@ header {
     display: flex;
 }
 
-
 header img {
     max-height: 25%;
     max-width: 25%;
-    padding-right: 50px;
 }
 
+.header-div {
+    display: flex;
+    align-content: center;
+    flex-wrap: wrap;
+    font-family: 'Playfair Display';
+}
+
+.header-div h1 {
+    font-size: 80px;
+}
 
 nav u {
-display: flex;
-justify-content: space-evenly;
-list-style: none;
-font-size: 30px;
-padding-bottom: 60px;
+    display: flex;
+    justify-content: space-evenly;
+    list-style: none;
+    font-size: 30px;
+    padding-bottom: 50px;
 }
 
+a {
+    color:#d5a6bd;
+}
 
-img{
+a:hover {
+    color:#aa8497;
+}
+
+.login-row {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: center;
+}
+
+.u-full-width img{
     max-height: 45%;
     max-width: 45%;
+    padding-bottom: 50px;
 }
 
 .row {
@@ -36,7 +59,6 @@ img{
     text-align: center;
 }
 
-
 .quote {
     padding: 20px 0px 40px 0px;
     width: 70%;
@@ -44,29 +66,24 @@ img{
     margin-right: auto;
 }
 
-
 .quote h1 {
-    font-size: 40px;
+    font-size: 35px;
 }
-
 
 .quote h2 {
     font-size: 25px;
 }
 
-
 .user-input {
-    padding: 20px 50px;
+    padding: 20px 10px;
     background-color: #eeeeee;
     border-radius: 4px;
 }
-
 
 .user-input label {
     font-size: 30px;
     font-weight: normal;
 }
-
 
 .btns-row {
     padding-top: 50px;
@@ -78,27 +95,33 @@ img{
     background-color: white;
 }
 
-
-.button {
-    font-size: 30px;
-    background-color:#d5a6bd;
+.welcome-text {
+    padding-bottom: 50px;
 }
 
-.button.button-primary,
-button {
+.welcome-text h3 {
+    color: #aa8497;
+}
+
+.button.button-primary {
+    font-size: 30px;
     background-color: #d5a6bd;
     border-color: #d5a6bd;
+    color: #ffffff;
 }
 
 .button.button-primary:hover,
 .button.button-primary:focus {
     background-color: #aa8497;
     border-color: #aa8497;
+    color: #ffffff;
+
 }
 
 input {
     width: 400px;
 }
+
 
 .align {
     display: flex;
@@ -134,10 +157,8 @@ h2 .plus {
     align-content: center;
 }
 
-
 .card-container{
     background-color: #eeeeee;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     padding: 40px 0px;
-
 }

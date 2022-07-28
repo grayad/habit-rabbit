@@ -2,13 +2,10 @@ header {
     display: flex;
 }
 
-
 header img {
     max-height: 25%;
     max-width: 25%;
-    padding-right: 50px;
 }
-
 
 .header-div {
     display: flex;
@@ -17,18 +14,16 @@ header img {
     font-family: 'Playfair Display';
 }
 
-
 .header-div h1 {
-    font-size: 78px;
+    font-size: 80px;
 }
-
 
 nav u {
     display: flex;
     justify-content: space-evenly;
     list-style: none;
     font-size: 30px;
-    padding-bottom: 60px;
+    padding-bottom: 50px;
 }
 
 a {
@@ -39,10 +34,6 @@ a:hover {
     color:#aa8497;
 }
 
-nav u li a {
-    text-decoration: none;
-}
-
 .login-row {
     display: flex;
     flex-direction: column;
@@ -50,10 +41,10 @@ nav u li a {
     align-content: center;
 }
 
-
-img{
+.u-full-width img{
     max-height: 45%;
     max-width: 45%;
+    padding-bottom: 50px;
 }
 
 .row {
@@ -68,37 +59,31 @@ img{
     text-align: center;
 }
 
-
 .quote {
     padding: 20px 0px 40px 0px;
-    width: 60%;
+    width: 70%;
     margin-left: auto;
     margin-right: auto;
 }
 
-
 .quote h1 {
-    font-size: 40px;
+    font-size: 35px;
 }
-
 
 .quote h2 {
     font-size: 25px;
 }
 
-
 .user-input {
-    padding: 20px 50px;
+    padding: 20px 10px;
     background-color: #eeeeee;
     border-radius: 4px;
 }
-
 
 .user-input label {
     font-size: 30px;
     font-weight: normal;
 }
-
 
 .btns-row {
     padding-top: 50px;
@@ -110,11 +95,15 @@ img{
     background-color: white;
 }
 
+.welcome-text {
+    padding-bottom: 50px;
+}
 
+.welcome-text h3 {
+    color: #aa8497;
+}
 
-
-.button.button-primary,
-input[type="submit"] {
+.button.button-primary {
     font-size: 30px;
     background-color: #d5a6bd;
     border-color: #d5a6bd;
@@ -122,8 +111,7 @@ input[type="submit"] {
 }
 
 .button.button-primary:hover,
-.button.button-primary:focus,
-input[type=submit]:hover {
+.button.button-primary:focus {
     background-color: #aa8497;
     border-color: #aa8497;
     color: #ffffff;
@@ -169,10 +157,8 @@ h2 .plus {
     align-content: center;
 }
 
-
 .card-container{
     background-color: #eeeeee;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     padding: 40px 0px;
-
 }

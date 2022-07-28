@@ -1,19 +1,23 @@
-
-console.log('in upcount.js');
-console.log(document);
-
-// async function upcountClickHandler(event) {
-//     event.preventDefault();
-  
-//     console.log('button clicked for upcount');
-//   }
-  
-//   document.querySelector('.addbutton').addEventListener('click', upcountClickHandler);
-//   console.log(document.querySelector('.addbutton'));
-
 async function upcountClickHandler(event) {
-    if (event.target.nodeName === 'BUTTON') {
+    event.preventDefault();
+
+    if (event.target.nodeName === 'BUTTON')
         console.log(event.target.id);
-      }                                                                                                                                                           
-}
+
+    const response = await fetch('/api/counts/upCount/' + event.target.id, {
+        method: 'PUT',
+        body: JSON.stringify({
+          id: event.target.id
+        }),
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      });
+
+      if (response.ok) {
+        document.location.reload();
+      } else {
+        alert(response.statusText);
+      }}
+
 window.addEventListener('click', upcountClickHandler);

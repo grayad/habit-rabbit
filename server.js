@@ -17,7 +17,7 @@ const sess = {
 
 // Import Routes
 // const htmlRoutes = require('./routes/html-routes');
-const routes = require("./routes");
+const routes = require("./controllers");
 
 // use PORT if it has been set, or default to 3001
 const PORT = process.env.PORT || 3001;
@@ -42,6 +42,6 @@ app.use(express.static(path.join(__dirname, "public")));
 app.use(routes);
 
 // turn on connection to db and server
-sequelize.sync({ force: true }).then(() => {
+sequelize.sync({ force: false }).then(() => {
   app.listen(PORT, () => console.log("Now listening"));
 });

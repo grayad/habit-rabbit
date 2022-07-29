@@ -16,7 +16,6 @@ const sess = {
 };
 
 // Import Routes
-// const htmlRoutes = require('./routes/html-routes');
 const routes = require("./controllers");
 
 // use PORT if it has been set, or default to 3001

@@ -34,12 +34,14 @@ router.get("/:id", (req, res) => {
 
 router.post("/", (req, res) => {
   User.create({
+    name: req.body.name,
     email: req.body.email,
     password: req.body.password,
   })
     .then((dbUserData) => {
       req.session.save(() => {
         req.session.userId = dbUserData.id;
+        req.session.username = dbUserData.name;
         req.session.loggedIn = true;
       });
       res.json(dbUserData);
@@ -68,6 +70,7 @@ router.post("/login", (req, res) => {
     }
     req.session.save(() => {
       req.session.userId = dbUserData.id;
+      req.session.username = dbUserData.name;
       req.session.loggedIn = true;
     });
     res.json({ user: dbUserData, message: "You are now logged in!" });

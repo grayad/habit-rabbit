@@ -2,9 +2,9 @@ use habit_rabbit_db;
 
 INSERT INTO user (email, password)
 VALUES
-    ('ron@gmail.com', 'pass1'),
-    ('mac@gmail.com', 'pass2'),
-    ('tina@gmail.com', 'pass3');
+    ('Ron', 'ron@gmail.com', 'pass1'),
+    ('Mac', 'mac@gmail.com', 'pass2'),
+    ('Tina', 'tina@gmail.com', 'pass3');
 
 
 INSERT INTO habit (name, type, target_days, user_id, created_at, updated_at)

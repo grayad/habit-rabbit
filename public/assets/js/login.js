@@ -1,4 +1,5 @@
 if (window.location.pathname === "/") {
+  var nameInputEl = document.getElementById("nameInput");
   var emailInputEl = document.getElementById("emailInput");
   var passwordInputEl = document.getElementById("passwordInput");
   var loginBtnEl = document.getElementById("logIn");
@@ -9,6 +10,7 @@ var loginHandler = async function (event) {
   event.preventDefault();
 
   // get values from inputs and trim any leading/trailing spaces
+  var userName = nameInputEl.value.trim();
   var userEmail = emailInputEl.value.trim();
   var userPW = passwordInputEl.value.trim();
 
@@ -18,12 +20,14 @@ var loginHandler = async function (event) {
       "Content-Type": "application/json",
     },
     body: JSON.stringify({
+      name: userName,
       email: userEmail,
       password: userPW,
     }),
   });
 
   if (response.ok) {
+    //TO DO: Need to set an email look up route to get user by email address and then set to local storage
     document.location.replace("/home");
   } else {
     alert("Failed to login");
@@ -34,6 +38,7 @@ var createAcctHandler = async function (event) {
   event.preventDefault();
 
   // get values from inputs and trim any leading/trailing spaces
+  var userName = nameInputEl.value.trim();
   var userEmail = emailInputEl.value.trim();
   var userPW = passwordInputEl.value.trim();
 
@@ -43,12 +48,15 @@ var createAcctHandler = async function (event) {
       "Content-Type": "application/json",
     },
     body: JSON.stringify({
+      name: userName,
       email: userEmail,
       password: userPW,
     }),
   });
 
   if (response.ok) {
+    //TO DO: Get remove from local storage as soon as possible.
+    localStorage.setItem('name', userName);
     document.location.replace("/home");
   } else {
     alert("Failed to sign up");

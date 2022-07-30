@@ -5,7 +5,7 @@ const { Habit, Counts, User } = require("../../models");
 
 // Login page
 router.get("/", (req, res) => {
-  // user handlebar method to render html
+  console.log(req.session);
   res.render("login");
 });
 
@@ -59,7 +59,12 @@ router.get("/create-habit", (req, res) => {
 
 // wildcard route for any requests that do not exist
 router.get("*", (req, res) => {
-  res.redirect("/");
+  if (req.session.loggedIn) {
+    res.redirect('/');
+    return;
+  }
+
+  res.render('login');
 });
 
 module.exports = router;

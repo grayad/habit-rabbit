@@ -41,7 +41,6 @@ const getHabitID = (habitname) =>
     return returnData.id;
 })
 
-
 var formSubmitHandler = function () {
 
   let uId;

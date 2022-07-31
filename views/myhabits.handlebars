@@ -10,19 +10,25 @@
     <nav>
         <u>
             <li>
-                <a href="/home">
+                {{!-- <a href="/home">
                     Main Menu
-                </a>
+                </a> --}}
+            <button id="home" class="btn-no-style">Main Menu</button>
             </li>
             <li>
-                <a href="/create-habit">
+                {{!-- <a href="/create-habit">
                     Create Habit
-                </a>
+                </a> --}}
+            <button id="create_habit" class="btn-no-style">Create Habit</button>
+
             </li>
             <li>
-                <a href="/logout">
+                {{!-- <a href="/logout">
                     Log Out
-                </a>
+                </a> NOT SURE WHY BUT AT LEAST IN SOME CASES, THESE HAVE TO BE BUTTONS PER OUR MODULE. --}}
+                
+            <button id="logout" class="btn-no-style">Log Out</button>
+                  {{!-- <a href="/login">login</a> --}}
             </li>
         </u>
     </nav>
@@ -61,3 +67,5 @@
     </div>
 </main>
 <script src="./assets/js/upCount.js"></script>
+<script src="./assets/js/myhabits.js"></script>
+

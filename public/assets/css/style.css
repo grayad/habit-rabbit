@@ -162,3 +162,21 @@ h2 .plus {
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     padding: 40px 0px;
 }
+
+.btn-no-style {
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    text-decoration: none;
+    color: #225ca3;
+    font-size: 100%;
+    font-weight: bold;
+    transition: color .1s;
+    margin-left: 16px;
+  }
+  
+.btn-no-style:hover {
+    background: none;
+    color: #3486eb;
+}

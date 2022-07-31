@@ -14,12 +14,13 @@ async function clickHandler(event) {
         headers: {
           'Content-Type': 'application/json'
         }
-      });
+    });
 
-      if (response.ok) {
+    if (response.ok) {
         document.location.reload();
       } else {
         alert(response.statusText);
-      }}
+    };
+};
 
 window.addEventListener('click', clickHandler);

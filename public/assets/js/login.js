@@ -27,7 +27,9 @@ var loginHandler = async function (event) {
   });
 
   if (response.ok) {
-    //TO DO: Need to set an email look up route to get user by email address and then set to local storage
+    //TO DO: Get remove from local storage as soon as possible.
+    localStorage.setItem('name', userName);
+    localStorage.setItem('email', userEmail);
     document.location.replace("/home");
   } else {
     alert("Failed to login");
@@ -52,11 +54,12 @@ var createAcctHandler = async function (event) {
       email: userEmail,
       password: userPW,
     }),
-  });
+  })
 
   if (response.ok) {
     //TO DO: Get remove from local storage as soon as possible.
     localStorage.setItem('name', userName);
+    localStorage.setItem('email', userEmail);
     document.location.replace("/home");
   } else {
     alert("Failed to sign up");

@@ -1,6 +1,4 @@
 var nameH3El = document.getElementById("welcome-msg");
-console.log(nameH3El);
-
 
 async function addEventListener(event) {
     // event.preventDefault();

@@ -1,4 +1,3 @@
-// Import Modules
 const express = require("express");
 const fs = require("fs");
 const path = require("path");
@@ -11,6 +10,7 @@ const PORT = process.env.PORT || 3001;
 
 const SequelizeStore = require("connect-session-sequelize")(session.Store);
 const routes = require("./controllers");
+const { clear } = require("console");
 
 const sess = {
   secret: process.env.secret,

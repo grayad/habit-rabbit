@@ -1,4 +1,4 @@
-async function upcountClickHandler(event) {
+async function clickHandler(event) {
     event.preventDefault();
 
     if (event.target.nodeName != 'BUTTON')
@@ -22,4 +22,4 @@ async function upcountClickHandler(event) {
         alert(response.statusText);
       }}
 
-window.addEventListener('click', upcountClickHandler);
+window.addEventListener('click', clickHandler);

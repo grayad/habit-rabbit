@@ -39,7 +39,7 @@ router.get('/:id', (req, res) => {
   console.log('habit find one session print');
   console.log(req.session);
 
-    Habit.findOne({
+    Habit.findAll({
         where: {
             id: req.params.id
         },
@@ -50,13 +50,13 @@ router.get('/:id', (req, res) => {
         'target_days',
         'user_id',
         'created_at',
-        // [sequelize.literal('(SELECT total_confirms FROM counts WHERE habit.id = counts.habit_id)'), 'total_count'],
+        [sequelize.literal('(SELECT total_confirms FROM counts WHERE habit.id = counts.habit_id)'), 'total_count'],
       ],
       include: [
-        // {
-        //     model: Counts,
-        //     attributes: [ 'total_confirms'],
-        // },
+        {
+            model: Counts,
+            attributes: [ 'total_confirms'],
+        },
         {
             model: User,
             attributes: ['email'],
@@ -65,7 +65,7 @@ router.get('/:id', (req, res) => {
     })
       .then(dbPostData => {
         if (!dbPostData) {
-          res.status(404).json({ message: 'No habit found with this id' });
+          res.status(404).json({ message: 'No habits found with this user_id' });
           return;
         }
         res.json(dbPostData);

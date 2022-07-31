@@ -29,6 +29,7 @@ Counts.init(
     },
     total_confirms: {
         type: DataTypes.INTEGER,
+        defaultValue: 0
     },
     // prev_confirm_date: {
     //     type: DataTypes.DATE,

@@ -24,33 +24,32 @@ router.get("/home", (req, res) => {
   });
 });
 
-
-// My Habits page
 router.get("/my-habits", (req, res) => {
   console.log('my-habits session print');
   console.log(req.session);
 
   Habit.findAll({
     order: [["created_at", "DESC"]],
-    // where : { user_id: req.session.user },
+    //CAN'T GET SESSION TO PERSIST
+    // where : { user_id: req.session.userId },
     attributes: [
       "id",
       "name",
       "type",
       "target_days",
       "created_at",
-      // [
-      //   sequelize.literal(
-      //     "(SELECT total_confirms FROM counts WHERE habit.id = counts.habit_id)"
-      //   ),
-      //   "total_count",
-      // ],
+      [
+        sequelize.literal(
+          "(SELECT total_confirms FROM counts WHERE habit.id = counts.habit_id)"
+        ),
+        "total_count",
+      ],
     ],
     include: [
-      // {
-      //   model: Counts,
-      //   attributes: ["total_confirms"],
-      // },
+      {
+        model: Counts,
+        attributes: ["total_confirms"],
+      },
       {
         model: User,
         attributes: ["name"],

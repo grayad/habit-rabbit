@@ -14,6 +14,9 @@ var loginHandler = async function (event) {
   var userEmail = emailInputEl.value.trim();
   var userPW = passwordInputEl.value.trim();
 
+  if(!userName)
+    userName = userEmail;
+
   const response = await fetch("/api/users/login", {
     method: "POST",
     headers: {

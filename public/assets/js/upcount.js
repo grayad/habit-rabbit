@@ -1,8 +1,10 @@
-async function upcountClickHandler(event) {
+async function clickHandler(event) {
     event.preventDefault();
 
-    if (event.target.nodeName === 'BUTTON')
-        console.log(event.target.id);
+    if (event.target.nodeName != 'BUTTON')
+        return;
+
+    console.log(event.target.id);
 
     const response = await fetch('/api/counts/upCount/' + event.target.id, {
         method: 'PUT',
@@ -20,4 +22,4 @@ async function upcountClickHandler(event) {
         alert(response.statusText);
       }}
 
-window.addEventListener('click', upcountClickHandler);
+window.addEventListener('click', clickHandler);

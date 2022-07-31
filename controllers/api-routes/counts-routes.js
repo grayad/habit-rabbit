@@ -27,8 +27,7 @@ router.put('/upCount/:id', (req, res) => {
   Counts.increment('total_confirms', {
     by: 1,
     where: {
-      //habit_id and id in Counts is always =
-      id: req.body.id
+      habit_id: req.body.id
     },
   }).then(() => {
     return Counts.findOne({
@@ -81,7 +80,6 @@ router.post('/', (req, res) => {
     Counts.create({
       habit_id: req.body.habit_id,
       user_id: req.body.user_id,
-      total_confirms: req.body.total_confirms
       })
       .then(dbPostData => res.json(dbPostData))
       .catch(err => {

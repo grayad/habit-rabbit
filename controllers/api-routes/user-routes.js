@@ -1,5 +1,7 @@
-const router = require("express").Router();
-const { User } = require("../../models");
+const router  = require("express").Router();
+const { User, Habit } = require("../../models");
+
+let userID;
 
 router.get("/", (req, res) => {
   User.findAll({
@@ -18,6 +20,27 @@ router.get("/:id", (req, res) => {
     where: {
       id: req.params.id,
     },
+    include:[Habit]
+  })
+    .then((dbUserData) => {
+      if (!dbUserData) {
+        res.status(404).json({ message: "No user found with this id" });
+        return;
+      }
+      res.json(dbUserData);
+    })
+    .catch((err) => {
+      console.log(err);
+      res.status(500).json(err);
+    });
+});
+
+router.get("/email/:email", (req, res) => {
+  User.findOne({
+    attributes: { exclude: ["password"]  },
+    where: {
+      email: req.params.email,
+    },
   })
     .then((dbUserData) => {
       if (!dbUserData) {
@@ -34,15 +57,24 @@ router.get("/:id", (req, res) => {
 
 router.post("/", (req, res) => {
   User.create({
+    name: req.body.name,
     email: req.body.email,
     password: req.body.password,
   })
     .then((dbUserData) => {
       req.session.save(() => {
         req.session.userId = dbUserData.id;
+        req.session.username = dbUserData.name;
         req.session.loggedIn = true;
+
+        console.log('user create session print');
+        console.log(userID);
+      
       });
       res.json(dbUserData);
+      console.log(dbUserData.dataValues);
+      userID = dbUserData.dataValues.id;
+      console.log(userID);
     })
     .catch((err) => {
       console.log(err);
@@ -51,6 +83,9 @@ router.post("/", (req, res) => {
 });
 
 router.post("/login", (req, res) => {
+  console.log('user-routes/login session print');
+  console.log(req.session);
+
   User.findOne({
     where: {
       email: req.body.email,
@@ -68,7 +103,12 @@ router.post("/login", (req, res) => {
     }
     req.session.save(() => {
       req.session.userId = dbUserData.id;
+      req.session.username = dbUserData.name;
       req.session.loggedIn = true;
+      console.log('user create save session print');
+      console.log(req.session);
+      userID = req.session.userId;
+      console.log(userID);
     });
     res.json({ user: dbUserData, message: "You are now logged in!" });
   });

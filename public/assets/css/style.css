@@ -26,13 +26,6 @@ nav u {
     padding-bottom: 50px;
 }
 
-a {
-    color:#d5a6bd;
-}
-
-a:hover {
-    color:#aa8497;
-}
 
 .login-row {
     display: flex;
@@ -110,6 +103,7 @@ a:hover {
     color: #ffffff;
 }
 
+
 .button.button-primary:hover,
 .button.button-primary:focus {
     background-color: #aa8497;
@@ -163,20 +157,23 @@ h2 .plus {
     padding: 40px 0px;
 }
 
+nav a,
 .btn-no-style {
     background: none;
     border: none;
     padding: 0;
     cursor: pointer;
-    text-decoration: none;
-    color: #225ca3;
+    color: #d5a6bd;
     font-size: 100%;
-    font-weight: bold;
+    font-weight: normal;
     transition: color .1s;
     margin-left: 16px;
-  }
-  
+    text-transform:uppercase;
+    text-decoration: underline;
+}
+
+a:hover,
 .btn-no-style:hover {
     background: none;
-    color: #3486eb;
+    color: #aa8497;
 }

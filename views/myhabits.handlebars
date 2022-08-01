@@ -1,0 +1,71 @@
+<header>
+    <img src="./assets/images/logo.png" />
+    <div class="header-div">
+        <h1>
+            My Habits
+        </h1>
+    </div>
+</header>
+<div>
+    <nav>
+        <u>
+            <li>
+                {{!-- <a href="/home">
+                    Main Menu
+                </a> --}}
+            <button id="home" class="btn-no-style">Main Menu</button>
+            </li>
+            <li>
+                {{!-- <a href="/create-habit">
+                    Create Habit
+                </a> --}}
+            <button id="create_habit" class="btn-no-style">Create Habit</button>
+
+            </li>
+            <li>
+                {{!-- <a href="/logout">
+                    Log Out
+                </a> NOT SURE WHY BUT AT LEAST IN SOME CASES, THESE HAVE TO BE BUTTONS PER OUR MODULE. --}}
+                
+            <button id="logout" class="btn-no-style">Log Out</button>
+                  {{!-- <a href="/login">login</a> --}}
+            </li>
+        </u>
+    </nav>
+</div>
+<main class="u-full-width">
+    <div class="container">
+        <h2>Click the <span class="plus">+</span> to add a completed day!</h2>
+        <div class="cards row" id="card-section">
+            {{#each habits as |habit|}}
+            <div class="card three columns">
+                <div class="card-container">
+                    <h4>{{habit.name}}</h4>
+                    <div class="align">
+                        <label for="habitType">Habit Type:</label>
+                        <label for="habitType" type="text" id="habitType">{{habit.type}}</label>
+                    </div>
+
+                    <div class="align">
+                        <label for="targetDays">Target #:</label>
+                        <label for="targetDays" type="text" id="targetDays">{{habit.target_days}}</label>
+                    </div>
+
+                    <div class="align">
+                        <label for="daysCompleted">Days Completed:</label>
+                        <label for="daysCompleted" type="text" id="daysCompleted">{{habit.total_count}}</label>
+                    </div>
+                </div>
+                <div class="addbutton-row">
+                    <button type="button" id={{habit.id}} class="addbutton"><span class="plus">+</span>
+                    </button>
+                </div>
+            </div>
+            {{/each}}
+        </div>
+
+    </div>
+</main>
+<script src="./assets/js/upCount.js"></script>
+<script src="./assets/js/myhabits.js"></script>
+

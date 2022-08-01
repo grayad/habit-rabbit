@@ -1,0 +1,179 @@
+header {
+    display: flex;
+}
+
+header img {
+    max-height: 25%;
+    max-width: 25%;
+}
+
+.header-div {
+    display: flex;
+    align-content: center;
+    flex-wrap: wrap;
+    font-family: 'Playfair Display';
+}
+
+.header-div h1 {
+    font-size: 80px;
+}
+
+nav u {
+    display: flex;
+    justify-content: space-evenly;
+    list-style: none;
+    font-size: 30px;
+    padding-bottom: 50px;
+}
+
+
+.login-row {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: center;
+}
+
+.u-full-width img{
+    max-height: 45%;
+    max-width: 45%;
+    padding-bottom: 50px;
+}
+
+.row {
+    text-align: center;
+}
+
+.addbutton-row {
+    padding-top: 40px;
+}
+
+.u-full-width {
+    text-align: center;
+}
+
+.quote {
+    padding: 20px 0px 40px 0px;
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.quote h1 {
+    font-size: 35px;
+}
+
+.quote h2 {
+    font-size: 25px;
+}
+
+.user-input {
+    padding: 20px 10px;
+    background-color: #eeeeee;
+    border-radius: 4px;
+}
+
+.user-input label {
+    font-size: 30px;
+    font-weight: normal;
+}
+
+.btns-row {
+    padding-top: 50px;
+    justify-content: space-evenly;
+    display: flex;
+}
+
+.addbutton {
+    background-color: white;
+}
+
+.welcome-text {
+    padding-bottom: 50px;
+}
+
+.welcome-text h3 {
+    color: #aa8497;
+}
+
+.button.button-primary {
+    font-size: 30px;
+    background-color: #d5a6bd;
+    border-color: #d5a6bd;
+    color: #ffffff;
+}
+
+
+.button.button-primary:hover,
+.button.button-primary:focus {
+    background-color: #aa8497;
+    border-color: #aa8497;
+    color: #ffffff;
+
+}
+
+input {
+    width: 400px;
+}
+
+
+.align {
+    display: flex;
+    padding: 20px;
+    justify-content: space-between;
+    padding: 10px 20px;
+}
+
+h2 .plus {
+    font-size: 60px;
+}
+
+
+.plus {
+    color: #d5a6bd;
+    font-size: 35px;
+}
+
+.card button span:hover {
+    color: #aa8497;
+}
+
+.card {
+    align-items: center;
+}
+
+.cards {
+    display: flex;
+    justify-content: space-between;
+}
+
+.card button {
+    align-content: center;
+}
+
+.card-container{
+    background-color: #eeeeee;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    padding: 40px 0px;
+}
+
+nav a,
+.btn-no-style {
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    color: #d5a6bd;
+    font-size: 100%;
+    font-weight: normal;
+    transition: color .1s;
+    margin-left: 16px;
+    text-transform:uppercase;
+    text-decoration: underline;
+}
+
+a:hover,
+.btn-no-style:hover {
+    background: none;
+    color: #aa8497;
+}
